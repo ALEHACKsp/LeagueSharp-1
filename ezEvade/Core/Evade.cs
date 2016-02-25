@@ -450,7 +450,7 @@ namespace ezEvade
                     var extraDelay = ObjectCache.menuCache.cache["ExtraPingBuffer"].GetValue<Slider>().Value;
                     if (EvadeHelper.CheckMovePath(movePos, ObjectCache.gamePing + extraDelay))
                     {
-                        *if (ObjectCache.menuCache.cache["AllowCrossing"].GetValue<bool>())
+                        if (ObjectCache.menuCache.cache["AllowCrossing"].GetValue<bool>())
                         {
                             var extraDelayBuffer = ObjectCache.menuCache.cache["ExtraPingBuffer"]
                                 .GetValue<Slider>().Value + 30;
