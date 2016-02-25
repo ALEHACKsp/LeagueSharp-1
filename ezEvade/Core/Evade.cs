@@ -137,7 +137,7 @@ namespace ezEvade
                 miscMenu.AddItem(new MenuItem("PreventDodgingUnderTower", "Prevent Dodging Under Tower").SetValue(false));
                 miscMenu.AddItem(new MenuItem("PreventDodgingNearEnemy", "Prevent Dodging Near Enemies").SetValue(true));
                 miscMenu.AddItem(new MenuItem("AdvancedSpellDetection", "Advanced Spell Detection").SetValue(false));
-                //miscMenu.AddItem(new MenuItem("AllowCrossing", "Allow Crossing").SetValue(false));
+                miscMenu.AddItem(new MenuItem("AllowCrossing", "Allow Crossing").SetValue(false));
                 //miscMenu.AddItem(new MenuItem("CalculateHeroPos", "Calculate Hero Position").SetValue(false));
 
                 Menu evadeModeMenu = new Menu("Mode", "EvadeModeSettings");
@@ -165,10 +165,10 @@ namespace ezEvade
 
                 miscMenu.AddSubMenu(fastEvadeMenu);
 
-                /*Menu evadeSpellSettingsMenu = new Menu("Evade Spell", "EvadeSpellMisc");
-                evadeSpellSettingsMenu.AddItem(new MenuItem("EvadeSpellActivationTime", "Evade Spell Activation Time").SetValue(new Slider(150, 0, 500)));
+                Menu evadeSpellSettingsMenu = new Menu("Evade Spell", "EvadeSpellMisc");
+                evadeSpellSettingsMenu.AddItem(new MenuItem("EvadeSpellActivationTime", "Evade Spell Activation Time").SetValue(new Slider(0, 0, 500)));
 
-                miscMenu.AddSubMenu(evadeSpellSettingsMenu);*/
+                miscMenu.AddSubMenu(evadeSpellSettingsMenu);
 
                 Menu bufferMenu = new Menu("Extra Buffers", "ExtraBuffers");
                 bufferMenu.AddItem(new MenuItem("ExtraPingBuffer", "Extra Ping Buffer").SetValue(new Slider(65, 0, 200)));
@@ -262,7 +262,7 @@ namespace ezEvade
         {
             menu.Item("ReactionTime").SetValue(new Slider(0, 0, 500));
             //menu.Item("ExtraAvoidDistance").SetValue(new Slider(0, 0, 300));
-            //menu.Item("TickLimiter").SetValue(new Slider(100, 0, 500));
+            menu.Item("TickLimiter").SetValue(new Slider(100, 0, 500));
         }
 
         private void OnEvadeModeChange(object sender, OnValueChangeEventArgs e)
@@ -322,7 +322,7 @@ namespace ezEvade
             {
                 //Evade.isChanneling = true;
                 //Evade.channelPosition = ObjectCache.myHeroCache.serverPos2D;
-                lastStopEvadeTime = EvadeUtils.TickCount + ObjectCache.gamePing + 100;
+                lastStopEvadeTime = EvadeUtils.TickCount + ObjectCache.gamePing + 125;
             }
 
             //block spell commmands if evade spell just used
