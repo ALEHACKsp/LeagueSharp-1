@@ -165,10 +165,10 @@ namespace ezEvade
 
                 miscMenu.AddSubMenu(fastEvadeMenu);
 
-                Menu evadeSpellSettingsMenu = new Menu("Evade Spell", "EvadeSpellMisc");
+                /*Menu evadeSpellSettingsMenu = new Menu("Evade Spell", "EvadeSpellMisc");
                 evadeSpellSettingsMenu.AddItem(new MenuItem("EvadeSpellActivationTime", "Evade Spell Activation Time").SetValue(new Slider(0, 0, 500)));
 
-                miscMenu.AddSubMenu(evadeSpellSettingsMenu);
+                miscMenu.AddSubMenu(evadeSpellSettingsMenu);*/
 
                 Menu bufferMenu = new Menu("Extra Buffers", "ExtraBuffers");
                 bufferMenu.AddItem(new MenuItem("ExtraPingBuffer", "Extra Ping Buffer").SetValue(new Slider(65, 0, 200)));
