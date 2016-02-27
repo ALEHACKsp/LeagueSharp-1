@@ -137,7 +137,7 @@ namespace ezEvade
                 miscMenu.AddItem(new MenuItem("PreventDodgingUnderTower", "Prevent Dodging Under Tower").SetValue(false));
                 miscMenu.AddItem(new MenuItem("PreventDodgingNearEnemy", "Prevent Dodging Near Enemies").SetValue(true));
                 miscMenu.AddItem(new MenuItem("AdvancedSpellDetection", "Advanced Spell Detection").SetValue(false));
-                miscMenu.AddItem(new MenuItem("AllowCrossing", "Allow Crossing").SetValue(false));
+                //miscMenu.AddItem(new MenuItem("AllowCrossing", "Allow Crossing").SetValue(false));
                 //miscMenu.AddItem(new MenuItem("CalculateHeroPos", "Calculate Hero Position").SetValue(false));
 
                 Menu evadeModeMenu = new Menu("Mode", "EvadeModeSettings");
@@ -450,7 +450,7 @@ namespace ezEvade
                     var extraDelay = ObjectCache.menuCache.cache["ExtraPingBuffer"].GetValue<Slider>().Value;
                     if (EvadeHelper.CheckMovePath(movePos, ObjectCache.gamePing + extraDelay))
                     {
-                        if (ObjectCache.menuCache.cache["AllowCrossing"].GetValue<bool>())
+                        /*if (ObjectCache.menuCache.cache["AllowCrossing"].GetValue<bool>())
                         {
                             var extraDelayBuffer = ObjectCache.menuCache.cache["ExtraPingBuffer"]
                                 .GetValue<Slider>().Value + 30;
@@ -464,7 +464,7 @@ namespace ezEvade
                                 lastPosInfo = tPosInfo;
                                 return;
                             }
-                        }
+                        }*/
 
                         lastBlockedUserMoveTo = new EvadeCommand
                         {
@@ -791,7 +791,7 @@ namespace ezEvade
                     if (EvadeHelper.CheckMovePath(movePos))
                     {
 
-                        if (ObjectCache.menuCache.cache["AllowCrossing"].GetValue<bool>())
+                        /*if (ObjectCache.menuCache.cache["AllowCrossing"].GetValue<bool>())
                         {
                             var extraDelayBuffer = ObjectCache.menuCache.cache["ExtraPingBuffer"]
                                 .GetValue<Slider>().Value + 30;
@@ -805,7 +805,7 @@ namespace ezEvade
                                 lastPosInfo = tPosInfo;
                                 return;
                             }
-                        }
+                        }*/
 
                         var posInfo = EvadeHelper.GetBestPositionMovementBlock(movePos);
                         if (posInfo != null)
