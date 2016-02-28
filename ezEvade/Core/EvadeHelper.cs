@@ -73,8 +73,8 @@ namespace ezEvade
 
             if (ObjectCache.menuCache.cache["HigherPrecision"].GetValue<bool>())
             {
-                maxPosToCheck = 115;
-                posRadius = 35;
+                maxPosToCheck = 105;
+                posRadius = 15;
             }
 
             List<PositionInfo> posTable = new List<PositionInfo>();
@@ -158,8 +158,8 @@ namespace ezEvade
 
             if (ObjectCache.menuCache.cache["HigherPrecision"].GetValue<bool>())
             {
-                maxPosToCheck = 115;
-                posRadius = 35;
+                maxPosToCheck = 105;
+                posRadius = 15;
             }
 
             Vector2 heroPoint = ObjectCache.myHeroCache.serverPos2D;
@@ -287,8 +287,8 @@ namespace ezEvade
         public static PositionInfo GetBestPositionMovementBlock(Vector2 movePos)
         {
             int posChecked = 0;
-            int maxPosToCheck = 115;
-            int posRadius = 35;
+            int maxPosToCheck = 105;
+            int posRadius = 15;
             int radiusIndex = 0;
 
             var extraEvadeDistance = ObjectCache.menuCache.cache["ExtraAvoidDistance"].GetValue<Slider>().Value;
@@ -344,8 +344,8 @@ namespace ezEvade
         public static PositionInfo GetBestPositionBlink()
         {
             int posChecked = 0;
-            int maxPosToCheck = 115;
-            int posRadius = 35;
+            int maxPosToCheck = 105;
+            int posRadius = 15;
             int radiusIndex = 0;
 
             var extraEvadeDistance = 100;//Evade.menu.SubMenu("MiscSettings").SubMenu("ExtraBuffers").Item("ExtraAvoidDistance").GetValue<Slider>().Value;
@@ -402,8 +402,8 @@ namespace ezEvade
         public static PositionInfo GetBestPositionDash(EvadeSpellData spell)
         {
             int posChecked = 0;
-            int maxPosToCheck = 115;
-            int posRadius = 35;
+            int maxPosToCheck = 105;
+            int posRadius = 15;
             int radiusIndex = 0;
 
             var extraDelayBuffer = ObjectCache.menuCache.cache["ExtraPingBuffer"].GetValue<Slider>().Value;
