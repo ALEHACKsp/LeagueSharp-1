@@ -322,11 +322,11 @@ namespace ezEvade
             {
                 //Evade.isChanneling = true;
                 //Evade.channelPosition = ObjectCache.myHeroCache.serverPos2D;
-                lastStopEvadeTime = EvadeUtils.TickCount + ObjectCache.gamePing + 125;
+                lastStopEvadeTime = EvadeUtils.TickCount + ObjectCache.gamePing + 85;
             }
 
             //block spell commmands if evade spell just used
-            if (EvadeSpell.lastSpellEvadeCommand != null && EvadeSpell.lastSpellEvadeCommand.timestamp + ObjectCache.gamePing + 150 > EvadeUtils.TickCount)
+            if (EvadeSpell.lastSpellEvadeCommand != null && EvadeSpell.lastSpellEvadeCommand.timestamp + ObjectCache.gamePing + 110 > EvadeUtils.TickCount)
             {
                 args.Process = false;
             }
@@ -409,7 +409,7 @@ namespace ezEvade
                         if (isDodging || EvadeUtils.TickCount < lastDodgingEndTime + 500)
                         {
                             EvadeCommand.MoveTo(Game.CursorPos.To2D()); //block moveto
-                            lastStopEvadeTime = EvadeUtils.TickCount + ObjectCache.gamePing + 100;
+                            lastStopEvadeTime = EvadeUtils.TickCount + ObjectCache.gamePing + 85;
                         }
                     }
                     return;
